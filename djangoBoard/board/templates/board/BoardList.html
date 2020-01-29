@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Board{% endblock %}
+
+{% block content %}
+<h2>게시판</h2>
+<ul>
+  {% for board in object_list %}
+    <li>
+      <a href="{% url 'board:boardDetail' board.id %}">{{ board }}</a> |
+      글쓴이 : {{ board.writer }} |
+      작성일 : {{ board.createTime }}
+    </li>
+  {% endfor %}
+</ul>
+
+
+{% endblock %}

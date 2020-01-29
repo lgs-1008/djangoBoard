@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}My page{% endblock %}
+
+{% block content %}
+  <h2>My Page</h2>
+
+    <p>ID : {{ id }}</p>
+    <p>NickName : {% if nick %}{{ nick }}{% else %}No NickName{% endif %}</p>
+    <p>Birth Date : {% if birth_date %}{{ birth_date }}{% else %}No birth date{% endif %}</p>
+    <p>About : {% if aboutMe %}{{ aboutMe }}{% else %}No aboutMe{% endif %}</p>
+
+{% endblock %}

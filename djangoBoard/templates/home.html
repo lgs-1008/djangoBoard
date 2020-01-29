@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!<br>
+  <button type="button" name="logoutBtn"><p><a href="{% url 'logout' %}">logout</a></p></button><br>
+  <button type="button" name="mypageBtn"><p><a href="{% url 'accounts:mypage' %}">My Page</a></p></button>
+  <button type="button" name="boardBtn"><p><a href="{% url 'board:boardList' %}">board</a></p></button>
+{% else %}
+<p>You are not USER! :u </p>
+<button type="button" name="loginBtn"><a href="{% url 'login' %}">login</a></button>
+<button type="button" name="signupBtn"><a href="{% url 'accounts:signup' %}">signup</a></button>
+{% endif %}
+{% endblock %}
