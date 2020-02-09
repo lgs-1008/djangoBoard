@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Board{% endblock %}
+
+{% block content %}
+<h2>글쓰기</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" name="writeBtn">작성</button>
+</form>
+
+{% endblock %}

@@ -7,6 +7,8 @@
 <h3>작성일 : {{ board.createTime }}</h3>
 <br>
 {{board.contents}}
-
-
+<br><br><br>
+<button type="button"><a href="{% url 'board:boardList' %}">목록으로</a></button>
+<button type="button"><a href="{% url 'board:boardEdit' board.id %}">수정하기</a></button>
+<button type="button"><a href="{% url 'board:boardDelete' board.id %}">삭제하기</a></button>
 {% endblock %}

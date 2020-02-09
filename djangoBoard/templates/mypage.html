@@ -9,4 +9,5 @@
     <p>Birth Date : {% if birth_date %}{{ birth_date }}{% else %}No birth date{% endif %}</p>
     <p>About : {% if aboutMe %}{{ aboutMe }}{% else %}No aboutMe{% endif %}</p>
 
+<button type="button"><a href="{% url 'home' %}">메인으로</a></button>
 {% endblock %}

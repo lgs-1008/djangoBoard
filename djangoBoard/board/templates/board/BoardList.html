@@ -3,15 +3,26 @@
 
 {% block content %}
 <h2>게시판</h2>
-<ul>
-  {% for board in object_list %}
-    <li>
-      <a href="{% url 'board:boardDetail' board.id %}">{{ board }}</a> |
-      글쓴이 : {{ board.writer }} |
-      작성일 : {{ board.createTime }}
-    </li>
-  {% endfor %}
-</ul>
+<button type="button"><a href="{% url 'board:boardWrite' %}">글쓰기</a></button>
+<button type="button"><a href="{% url 'home' %}">메인으로</a></button>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Writer</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for board in object_list %}
+      <tr>
+        <td><a href="{% url 'board:boardDetail' board.id %}">{{ board }}</a></td>
+        <td>{{ board.writer }}</td>
+        <td>{{ board.createTime }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
 
 {% endblock %}

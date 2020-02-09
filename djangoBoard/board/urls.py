@@ -6,6 +6,7 @@ app_name = 'board'
 urlpatterns = [
     path('', views.BoardListView.as_view(), name = 'boardList'),
     path('<int:pk>/', views.BoardDetailView.as_view(), name = 'boardDetail'),
-    #path('write/', views.BoardWriteView, name = 'boardWrite'),
-    #path('write/<int:id>/', views.BoardEditView, name = 'boardEdit'),
+    path('write/', views.BoardWriteView, name = 'boardWrite'),
+    path('write/<int:pk>/', views.BoardEditView, name = 'boardEdit'),
+    path('delete/<int:pk>/', views.BoardDeleteView, name = 'boardDelete'),
 ]
